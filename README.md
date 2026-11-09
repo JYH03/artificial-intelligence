@@ -1,2 +1,25 @@
-# artificial-intelligence
-artificial intelligence assignment 
+# 얼굴 인식: PCA와 CNN 비교
+
+LFW 얼굴 이미지 데이터셋을 이용해 PCA로 차원을 축소한 뒤 KNN으로 사람을 분류하고, CNN의 분류 정확도와 비교하는 인공지능 수업 과제이다.
+
+## 실험 내용
+
+- 사람별 이미지 20장을 선택해 데이터 균형을 맞추고 학습·테스트 데이터를 75:25로 분리한다.
+- 학습 데이터로 PCA를 학습하고 주성분, 얼굴 복원 이미지, 누적 설명 분산을 시각화한다.
+- 주성분 개수, whitening 적용 여부, KNN의 이웃 수(`k=1, 3, 5`)에 따른 테스트 정확도를 비교한다.
+- 같은 테스트 데이터로 CNN과 PCA + KNN의 정확도를 비교하고 CNN의 학습 곡선을 확인한다.
+
+## 실행 방법
+
+Python 환경에서 필요한 라이브러리를 설치한 후 실행한다.
+
+```bash
+pip install numpy matplotlib scikit-learn tensorflow
+python main.py
+```
+
+LFW 데이터셋이 캐시에 없다면 최초 실행 시 내려받으므로 인터넷 연결이 필요하다. CNN 학습에는 시간이 걸릴 수 있다.
+
+## 결과
+
+실행하면 `outputs/` 폴더에 데이터 분포, PCA 시각화, 복원 이미지, KNN 정확도, CNN 학습 곡선과 최종 정확도 비교 그래프가 저장된다. 실행 환경에 따라 결과는 달라질 수 있다.
